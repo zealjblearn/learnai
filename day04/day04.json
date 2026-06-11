@@ -4,34 +4,3 @@
     {"role": "", "description": ""},
     {"role": "", "description": ""}
 ]
-
-role,description
-Super Admin, Full Access
-Admin, Read and Write Access
-Viewer, View Access
-Reader, Read Access
-
-{
-  "totalCount": 3,
-  "page": 1,
-  "employees": [
-    {
-      "id": 101,
-      "name": "John Doe",
-      "role": "Software Engineer",
-      "salary": 85000
-    },
-    {
-      "id": 102,
-      "name": "Jane Smith",
-      "role": "UX Designer",
-      "salary": 80000
-    },
-    {
-      "id": 103,
-      "name": "Alex Jones",
-      "role": "Marketing Specialist",
-      "salary": 65000
-    }
-  ]
-}
