@@ -19,16 +19,16 @@ def predict(message, history):
                     }
                 )
     
-    
     # 2. Add the current user prompt
-    messages.append({"role": "user", "content": message})
-    
     print(messages)
+    messages.append({"role": "user", "content": message})
+    print(message)
+    
     # 3. Stream from Ollama
     # Ensure the model name matches what you pulled (e.g., 'llama3.2:3b')
     stream = ollama.chat(
-        # model='llama3.2',
-        model = 'learnlessdaily/learnlessdaily-chatbot:latest',
+        #model='llama3.2',
+        model='learnlessdaily/learnlessdaily-chatbot:latest',
         messages=messages,
         stream=True
     )
@@ -44,7 +44,7 @@ def predict(message, history):
 demo = gr.ChatInterface(
     fn=predict,
     title="JB ChatBot",
-    description="Chatting locally with Llama 3.2 via Ollama."
+    description="Chatting locally with learnlessdaily/learnlessdaily-chatbot via Ollama."
 )
 
 demo.launch()
