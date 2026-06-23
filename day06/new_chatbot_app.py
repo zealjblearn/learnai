@@ -1,11 +1,14 @@
 import gradio as gr
 import ollama
+# from pprint import pprint
 
 def predict(message, history):
     # 1. Format the history into the structure Ollama expects
     # Gradio history is [[user, bot], [user, bot]]
     messages = []
     for item in history:
+        # pprint(item.model_dump())
+        print(item)
         role = item["role"]
         content_blocks = item.get("content", [])
         if content_blocks and isinstance(content_blocks, list):
@@ -44,7 +47,7 @@ def predict(message, history):
 demo = gr.ChatInterface(
     fn=predict,
     title="JB ChatBot",
-    description="Chatting locally with learnlessdaily/learnlessdaily-chatbot via Ollama."
+    description="Chatting locally with learnlessdaily/learnlessdaily-chatbot via Ollama.",
 )
 
-demo.launch()
+demo.launch(share=True)
